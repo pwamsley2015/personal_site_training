@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import BANNER_IMG from "../images/pre_bench.jpg";
+import "../App.css";
+
 export default class Banner extends Component {
+  componentDidMount() {
+    window.addEventListener("scroll", this.resizeOnScroll);
+  }
+
+  resizeOnScroll() {
+    const distanceY = window.pageYOffset || document.documentElement.scrollTop,
+      shrinkOn = 100,
+      banner = document.getElementById("#banner");
+
+    if (distanceY > shrinkOn) {
+      banner.classList.add("smaller");
+    }
+  }
+
   render() {
-    return (
-      <div className="banner">
-        <div className="transition_image">
-          <Image fluid src={BANNER_IMG}></Image>
-        </div>
-        <div>
-          <h1>Patrick Wamsley</h1>
-          <br />
-          <h3>500 Squat 286 Bench 600 Deadlift</h3>
-          <br />
-          Coaching Log Rambles OpenPower Insta Code
-        </div>
-      </div>
-    );
+    return <div className="banner" id="#banner"></div>;
   }
 }
