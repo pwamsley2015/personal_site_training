@@ -1,17 +1,32 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Parallax from "react-springy-parallax";
 import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <div>
+        <Parallax ref="parallax" pages={3}>
+          <Parallax.Layer offset={0} speed={0.5}>
+            Layer 0 Image
+          </Parallax.Layer>
+          <Parallax.Layer offset={0.5} speed={0.5}>
+            Layer 1 Hi I'm Patrick
+          </Parallax.Layer>
+          <Parallax.Layer offset={1} speed={0.5}>
+            Layer 2 Links
+          </Parallax.Layer>
+          <Parallax.Layer offset={1.5} speed={0.5}>
+            Layer 3 Coaching
+          </Parallax.Layer>
+          <Parallax.Layer offset={2} speed={0.5}>
+            Layer 4 Ted Talks
+          </Parallax.Layer>
+        </Parallax>
+      </div>
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<HomeScreen />, document.getElementById("root"));
