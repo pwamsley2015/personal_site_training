@@ -3,12 +3,17 @@ import ReactDOM from "react-dom";
 import Parallax from "react-springy-parallax";
 import "./index.css";
 import PreBenchImg from "./images/PreBench.png";
-
+import SquatImg from "./images/Squat.png";
+import DeadliftFace from "./images/DeadliftFace.jpg";
+import Banner from "./components/Banner";
+import Links from "./components/Links";
+import Coaching from "./components/Coaching";
+import Posts from "./components/Posts";
 const HELLO = "Hi, I'm Patrick";
-const BTW = "I'm a nerdy Powerlifter";
+const BTW = "I'm a nerdy Powerlifter.";
 const ABOUT =
-  "I started training seriously (began my first decent program) early 2018. I've made some progress and learned a few things since then...";
-const PRS = "Current PRS:";
+  "This is my deadlift face. I started training seriously (began my first decent program) early 2018. I've made some progress and learned a few things since then...";
+const PRS = "Current PRs:";
 const SQUAT = "500";
 const BENCH = "286";
 const DEADLIFT = "600";
@@ -27,7 +32,7 @@ class HomeScreen extends React.Component {
           {/* Backgrounds */}
           <Parallax.Layer
             offset={0}
-            speed={1}
+            speed={0}
             style={{
               backgroundImage: "url(" + PreBenchImg + ")",
               backgroundSize: "cover",
@@ -37,17 +42,53 @@ class HomeScreen extends React.Component {
           />
           <Parallax.Layer
             offset={1}
-            speed={1}
-            style={{ backgroundColor: "#243B4a" }}
+            speed={0}
+            style={{
+              backgroundImage: "url(" + DeadliftFace + ")",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           ></Parallax.Layer>
 
           <Parallax.Layer
             offset={2}
-            speed={1}
-            style={{ backgroundColor: "#243BFF" }}
+            speed={0}
+            style={{
+              backgroundImage: "url(" + SquatImg + ")",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           ></Parallax.Layer>
+
           {/* Content */}
-          <Parallax.Layer offset={0.65} speed={0.5}></Parallax.Layer>
+
+          <Parallax.Layer offset={0} speed={1}>
+            <h1
+              style={{
+                fontWeight: "400",
+                textAlign: "center",
+                color: "#FFFFFF",
+                fontSize: "10vw",
+              }}
+            >
+              {HELLO}
+            </h1>
+            <Banner />
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={0.5} speed={1}>
+            <Links />
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={1.5} speed={1}>
+            <Coaching />
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={2.2} speed={1}>
+            <Posts />
+          </Parallax.Layer>
         </Parallax>
       </div>
     );
