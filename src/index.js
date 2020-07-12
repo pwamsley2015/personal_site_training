@@ -9,6 +9,7 @@ import Banner from "./components/Banner";
 import Links from "./components/Links";
 import Coaching from "./components/Coaching";
 import Posts from "./components/Posts";
+import "bootstrap/dist/css/bootstrap.min.css";
 const HELLO = "Hi, I'm Patrick";
 const BTW = "I'm a nerdy Powerlifter.";
 const ABOUT =
@@ -32,7 +33,7 @@ class HomeScreen extends React.Component {
           {/* Backgrounds */}
           <Parallax.Layer
             offset={0}
-            speed={0}
+            speed={0.4}
             style={{
               backgroundImage: "url(" + PreBenchImg + ")",
               backgroundSize: "cover",
@@ -64,21 +65,28 @@ class HomeScreen extends React.Component {
 
           {/* Content */}
 
-          <Parallax.Layer offset={0} speed={1}>
+          <Parallax.Layer offset={0.5} speed={5}>
             <h1
               style={{
                 fontWeight: "400",
                 textAlign: "center",
                 color: "#FFFFFF",
-                fontSize: "10vw",
+                fontSize: "11vw",
+                padding: "5px",
+                margin: "5px",
+                WebkitTextStroke: "1px",
+                WebkitTextStrokeColor: "black",
               }}
             >
               {HELLO}
             </h1>
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={0.999} speed={8}>
             <Banner />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={0.5} speed={1}>
+          <Parallax.Layer offset={0.9999} speed={1.25}>
             <Links />
           </Parallax.Layer>
 
