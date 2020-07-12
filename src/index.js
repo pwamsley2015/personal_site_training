@@ -30,10 +30,12 @@ class HomeScreen extends React.Component {
     return (
       <div>
         <Parallax ref="parallax" pages={3}>
-          {/* Backgrounds */}
+          {/* FIRST, NON-OVERLAPS - Images, Links Section */}
+
+          {/* Bench Image -- Under Hello and Banner */}
           <Parallax.Layer
             offset={0}
-            speed={0.4}
+            speed={0}
             style={{
               backgroundImage: "url(" + PreBenchImg + ")",
               backgroundSize: "cover",
@@ -41,8 +43,15 @@ class HomeScreen extends React.Component {
               backgroundRepeat: "no-repeat",
             }}
           />
+
+          {/* Links Section */}
+          <Parallax.Layer offset={1} speed={0}>
+            <Links />
+          </Parallax.Layer>
+
+          {/* Deadlift Images -- under coaching section */}
           <Parallax.Layer
-            offset={1}
+            offset={2}
             speed={0}
             style={{
               backgroundImage: "url(" + DeadliftFace + ")",
@@ -53,7 +62,7 @@ class HomeScreen extends React.Component {
           ></Parallax.Layer>
 
           <Parallax.Layer
-            offset={2}
+            offset={3}
             speed={0}
             style={{
               backgroundImage: "url(" + SquatImg + ")",
@@ -65,6 +74,7 @@ class HomeScreen extends React.Component {
 
           {/* Content */}
 
+          {/* Hi, I'm Patrick */}
           <Parallax.Layer offset={0.5} speed={5}>
             <h1
               style={{
@@ -74,7 +84,7 @@ class HomeScreen extends React.Component {
                 fontSize: "11vw",
                 padding: "5px",
                 margin: "5px",
-                WebkitTextStroke: "1px",
+                WebkitTextStroke: "2px",
                 WebkitTextStrokeColor: "black",
               }}
             >
@@ -82,12 +92,8 @@ class HomeScreen extends React.Component {
             </h1>
           </Parallax.Layer>
 
-          <Parallax.Layer offset={0.999} speed={8}>
+          <Parallax.Layer offset={0.999} speed={5}>
             <Banner />
-          </Parallax.Layer>
-
-          <Parallax.Layer offset={0.9999} speed={1.25}>
-            <Links />
           </Parallax.Layer>
 
           <Parallax.Layer offset={1.5} speed={1}>

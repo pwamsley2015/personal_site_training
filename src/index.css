@@ -18,3 +18,9 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
+.card-img-top {
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+}
