@@ -41,27 +41,24 @@ class HomeScreen extends React.Component {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              // height: "100%",
             }}
           />
 
-          {/* Links Section */}
-          <Parallax.Layer offset={1} speed={0}>
-            <Links />
-          </Parallax.Layer>
-
-          {/* Deadlift Images -- under coaching section */}
+          {/* Deadlift Image -- coaching section */}
           <Parallax.Layer
-            offset={2}
+            offset={1.3}
             speed={0}
             style={{
               backgroundImage: "url(" + DeadliftFace + ")",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              // height: "100%",
             }}
           ></Parallax.Layer>
 
-          <Parallax.Layer
+          {/* <Parallax.Layer
             offset={3}
             speed={0}
             style={{
@@ -70,7 +67,7 @@ class HomeScreen extends React.Component {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
-          ></Parallax.Layer>
+          ></Parallax.Layer> */}
 
           {/* Content */}
 
@@ -92,17 +89,21 @@ class HomeScreen extends React.Component {
             </h1>
           </Parallax.Layer>
 
-          <Parallax.Layer offset={0.999} speed={5}>
+          <Parallax.Layer offset={0.9} speed={5}>
             <Banner />
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={1} speed={0.15}>
+            <Links />
           </Parallax.Layer>
 
           <Parallax.Layer offset={1.5} speed={1}>
             <Coaching />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={2.2} speed={1}>
+          {/* <Parallax.Layer offset={2.2} speed={1}>
             <Posts />
-          </Parallax.Layer>
+          </Parallax.Layer> */}
         </Parallax>
       </div>
     );
