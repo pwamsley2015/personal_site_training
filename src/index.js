@@ -101,9 +101,9 @@ class HomeScreen extends React.Component {
             <Coaching />
           </Parallax.Layer>
 
-          {/* <Parallax.Layer offset={2.2} speed={1}>
+          <Parallax.Layer offset={2} speed={1}>
             <Posts />
-          </Parallax.Layer> */}
+          </Parallax.Layer>
         </Parallax>
       </div>
     );
