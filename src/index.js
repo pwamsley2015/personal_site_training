@@ -55,15 +55,14 @@ class HomeScreen extends React.Component {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              // height: "100%",
             }}
           ></Parallax.Layer>
 
-          <Parallax.Layer offset={2} speed={0.5}>
+          <Parallax.Layer id="log" offset={2} speed={0.5}>
             <Log />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={3} speed={0}>
+          <Parallax.Layer id="posts" offset={3} speed={0}>
             <Posts />
           </Parallax.Layer>
 
@@ -106,7 +105,7 @@ class HomeScreen extends React.Component {
             <Links />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.25} speed={1.5}>
+          <Parallax.Layer id="coaching" offset={1.25} speed={1.5}>
             <Coaching />
           </Parallax.Layer>
         </Parallax>
