@@ -1,15 +1,16 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import Parallax from "react-springy-parallax";
-import "./index.css";
+import Banner from "./components/Banner";
+import Coaching from "./components/Coaching";
+import Links from "./components/Links";
+import Log from "./components/Log";
+import Posts from "./components/Posts";
+import DeadliftFace from "./images/DeadliftFace.jpg";
 import PreBenchImg from "./images/PreBench.png";
 import SquatImg from "./images/Squat.png";
-import DeadliftFace from "./images/DeadliftFace.jpg";
-import Banner from "./components/Banner";
-import Links from "./components/Links";
-import Coaching from "./components/Coaching";
-import Posts from "./components/Posts";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 const HELLO = "Hi, I'm Patrick";
 const BTW = "I'm a nerdy Powerlifter.";
 const ABOUT =
@@ -29,8 +30,8 @@ class HomeScreen extends React.Component {
     };
     return (
       <div>
-        <Parallax ref="parallax" pages={3}>
-          {/* FIRST, NON-OVERLAPS - Images, Links Section */}
+        <Parallax ref="parallax" pages={5}>
+          {/* FIRST, NON-OVERLAPS - Images, Log Section, Posts Section */}
 
           {/* Bench Image -- Under Hello and Banner */}
           <Parallax.Layer
@@ -47,7 +48,7 @@ class HomeScreen extends React.Component {
 
           {/* Deadlift Image -- coaching section */}
           <Parallax.Layer
-            offset={1.3}
+            offset={1}
             speed={0}
             style={{
               backgroundImage: "url(" + DeadliftFace + ")",
@@ -58,8 +59,16 @@ class HomeScreen extends React.Component {
             }}
           ></Parallax.Layer>
 
-          {/* <Parallax.Layer
-            offset={3}
+          <Parallax.Layer offset={2} speed={0.5}>
+            <Log />
+          </Parallax.Layer>
+
+          <Parallax.Layer offset={3} speed={0}>
+            <Posts />
+          </Parallax.Layer>
+
+          <Parallax.Layer
+            offset={4}
             speed={0}
             style={{
               backgroundImage: "url(" + SquatImg + ")",
@@ -67,7 +76,7 @@ class HomeScreen extends React.Component {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
-          ></Parallax.Layer> */}
+          ></Parallax.Layer>
 
           {/* Content */}
 
@@ -97,12 +106,8 @@ class HomeScreen extends React.Component {
             <Links />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.5} speed={1}>
+          <Parallax.Layer offset={1.25} speed={1.5}>
             <Coaching />
-          </Parallax.Layer>
-
-          <Parallax.Layer offset={2} speed={1}>
-            <Posts />
           </Parallax.Layer>
         </Parallax>
       </div>

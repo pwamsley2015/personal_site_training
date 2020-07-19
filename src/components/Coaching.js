@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import "../index.css";
 import "./Coaching.css";
@@ -15,7 +14,7 @@ export default class Coaching extends React.Component {
   render() {
     const pStyle = {
       backgroundColor: "DarkSlateGray",
-      fontSize: "6vw",
+      fontSize: "5vw",
       lineSpacing: "150%",
       borderStyle: "solid",
       borderRadius: "3px",
@@ -26,7 +25,7 @@ export default class Coaching extends React.Component {
         style={{
           color: "white",
           textAlign: "center",
-          width: "80%",
+          width: "70%",
           margin: "auto",
           padding: "1vw",
         }}

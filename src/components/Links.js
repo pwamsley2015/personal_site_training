@@ -1,21 +1,6 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  CardDeck,
-  Image,
-  Tooltip,
-  OverlayTrigger,
-} from "react-bootstrap";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
-import CoachingImg from "../images/Coaching.jpeg";
-import PostsImg from "../images/Posts.png";
-import LogImg from "../images/Log.png";
-import InstaImg from "../images/insta.png";
-import GithubImg from "../images/github.png";
 const NO_IMAGE = "";
 
 const LINKS = [
