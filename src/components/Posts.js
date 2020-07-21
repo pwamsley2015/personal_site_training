@@ -31,24 +31,23 @@ export default class Posts extends React.Component {
         }}
       >
         <h1 className="header">Posts</h1>
-
-        <hr />
         <Carousel>
           {POSTS.map((post, i) => (
             <Carousel.Item>
               <h1 className="header_smaller">{post.title}</h1>
               <InstagramEmbed
                 url={post.url}
-                maxWidth={1000}
+                maxWidth={600}
                 containerTagName="div"
                 injectScript
                 protocol=""
+                hideCaption={true}
                 onLoading={() => {}}
                 onSuccess={() => {}}
                 onAfterRender={() => {}}
                 onFailure={() => {}}
               />
-              <hr />
+              {/* <hr /> */}
               <h3 className="boxed_text">{post.text}</h3>
             </Carousel.Item>
           ))}

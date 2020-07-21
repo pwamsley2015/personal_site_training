@@ -92,11 +92,11 @@ class HomeScreen extends React.Component {
             <Banner />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.008} speed={-1}>
+          <Parallax.Layer offset={1.03} speed={-0.5}>
             <Links style={{ position: "fixed", zIndex: "9999" }} />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.2} speed={1.8}>
+          <Parallax.Layer offset={1.1} speed={0.5}>
             <div id="coaching">
               <Coaching />
             </div>
