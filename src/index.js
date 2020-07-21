@@ -58,7 +58,7 @@ class HomeScreen extends React.Component {
             }}
           ></Parallax.Layer>
 
-          <Parallax.Layer offset={2.2} speed={0}>
+          <Parallax.Layer offset={2} speed={0}>
             <div id="log">
               <Log />
             </div>
@@ -72,7 +72,7 @@ class HomeScreen extends React.Component {
 
           <Parallax.Layer
             offset={4}
-            speed={0}
+            speed={2}
             style={{
               backgroundImage: "url(" + SquatImg + ")",
               backgroundSize: "cover",
@@ -80,11 +80,18 @@ class HomeScreen extends React.Component {
               backgroundRepeat: "no-repeat",
             }}
           ></Parallax.Layer>
+          <Parallax.Layer
+            offset={4.8}
+            speed={15}
+            style={{ textAlign: "center" }}
+          >
+            <span className="overlay_text">You hit depth.</span>
+          </Parallax.Layer>
 
           {/* Content */}
 
           {/* Hi, I'm Patrick */}
-          <Parallax.Layer offset={0.25} speed={0.3}>
+          <Parallax.Layer offset={0.35} speed={0.3}>
             <h1 className="overlay_header">{HELLO}</h1>
           </Parallax.Layer>
 
