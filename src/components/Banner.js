@@ -1,16 +1,6 @@
 import React from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  CardDeck,
-  Image,
-  Tooltip,
-  OverlayTrigger,
-} from "react-bootstrap";
 const BTW = "I'm a nerdy Powerlifter.";
 const ABOUT =
   "This is my training site. Here lives a public log of my training, as well as some training-related rambles. I hope you find something interesting--thanks for stopping by!";
@@ -70,65 +60,20 @@ export default class Banner extends React.Component {
           overlay={btwTooltip}
           delay={{ show: 100, hide: 1000 }}
         >
-          {/* <div
-            style={{
-              fontSize: "5vw",
-              verticalAlign: "middle",
-              display: "block",
-              backgroundColor: "SlateGray",
-              margin: "1vw",
-              marginBottom: "3vw",
-            }}
-          > */}
-          <span
-            style={{
-              padding: "1vw",
-              backgroundColor: "SlateGray",
-            }}
-          >
-            {BTW}
-          </span>
+          <div className="overlay_text">{BTW}</div>
         </OverlayTrigger>
 
-        <div
-          style={{
-            fontSize: "2vw",
-            borderRadius: "10px",
-            margin: "3vw",
-          }}
-        >
+        <div>
           <OverlayTrigger
             placement="right"
             overlay={kgToLbsTooltip}
             delay={{ show: 100, hide: 1000 }}
           >
-            <span
-              style={{
-                padding: "1vw",
-                backgroundColor: "SlateGray",
-              }}
-            >
-              {PRs}
-            </span>
+            <div className="overlay_text_small">{PRs}</div>
           </OverlayTrigger>
         </div>
 
-        <div
-          style={{
-            fontSize: "2.5vw",
-            borderRadius: "10px",
-            margin: "3vw",
-          }}
-        >
-          <span
-            style={{
-              padding: "1vw",
-              backgroundColor: "DarkSlateGray",
-            }}
-          >
-            {ABOUT}
-          </span>
-        </div>
+        <div className="overlay_text">{ABOUT}</div>
       </div>
     );
   }

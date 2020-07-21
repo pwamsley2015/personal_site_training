@@ -14,13 +14,92 @@ code {
     monospace;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.overlay_header {
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  font-size: 200px;
+  padding: 5px;
+  margin: 5px;
+  -webkit-text-stroke: 3px;
+  -webkit-text-stroke-color: black;
 }
 
-.card-img-top {
-  width: 25vw;
-  height: 25vw;
-  object-fit: cover;
+.overlay_text {
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  padding: 3px;
+  margin: auto;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: black;
 }
+
+.overlay_text_small {
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  font-size: 55px;
+  padding: 3px;
+  margin: auto;
+  width: 80%;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: black;
+  background-color: slategray;
+}
+
+.header {
+  font-weight: 400;
+  text-align: center;
+  color: black;
+  font-size: 100px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.header_smaller {
+  font-weight: 400;
+  text-align: center;
+  color: black;
+  font-size: 80px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.boxed_text {
+  color: white;
+  background-color: darkslategrey;
+  font-size: 48px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: "3px";
+  margin-bottom: "3px";
+  text-align: center;
+  padding: 5px;
+  /* -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: black; */
+  border-style: solid;
+  border-radius: 3px;
+  border-color: slategrey;
+}
+
+.button {
+  font-size: 50px;
+  font-weight: 400;
+  color: white;
+  background-color: slategrey;
+  padding: 3px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: darkslategrey;
+  height: fit-content;
+  width: fit-content;
+}
+
+/* @media only screen and (max-width: 2000px) {
+  body * {
+    background-color: red;
+  }
+} */

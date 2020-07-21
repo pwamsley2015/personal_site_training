@@ -20,12 +20,6 @@ const POSTS = [
 
 export default class Posts extends React.Component {
   render() {
-    const textStyle = {
-      fontSize: "15vw",
-      fontWeight: "400",
-      padding: "1vw",
-      margin: "1vw",
-    };
     return (
       <div
         style={{
@@ -36,25 +30,16 @@ export default class Posts extends React.Component {
           flexDirection: "column",
         }}
       >
-        <h1 style={textStyle}>Posts</h1>
+        <h1 className="header">Posts</h1>
 
         <hr />
         <Carousel>
           {POSTS.map((post, i) => (
             <Carousel.Item>
-              <h1
-                style={{
-                  width: "fit-content",
-                  margin: "auto",
-                  padding: "5px",
-                }}
-              >
-                {post.title}
-              </h1>
+              <h1 className="header_smaller">{post.title}</h1>
               <InstagramEmbed
                 url={post.url}
                 maxWidth={1000}
-                hideCaption={true}
                 containerTagName="div"
                 injectScript
                 protocol=""
@@ -63,9 +48,8 @@ export default class Posts extends React.Component {
                 onAfterRender={() => {}}
                 onFailure={() => {}}
               />
-              <h3 style={{ margin: "auto", width: "40vw", padding: "10px" }}>
-                {post.text}
-              </h3>
+              <hr />
+              <h3 className="boxed_text">{post.text}</h3>
             </Carousel.Item>
           ))}
         </Carousel>

@@ -62,7 +62,6 @@ function INSTA_TOOLTIP_F(props) {
 function handleClick(link) {
   let section = document.querySelector(link);
   section.scrollIntoView({ behavior: "smooth", block: "start" });
-  // section.scrollTop -= 100;
 }
 
 function POSTS_CLICKED() {
@@ -78,22 +77,12 @@ export default class Links extends React.Component {
     const aStyle = {
       color: "inherit",
       textDecoration: "inherit",
+      borderColor: "DarkSlateGrey",
     };
-    const nameStyle = {
-      fontSize: "3vw",
-      fontWeight: "400",
-      color: "white",
-      backgroundColor: "SlateGray",
-      padding: "1vw",
-      margin: "1vw",
-      borderRadius: "1.5vw",
-      borderStyle: "solid",
-      borderColor: "DarkSlateGray",
-    };
+
     return (
       <div
         style={{
-          // backgroundColor: "DarkSlateGray",
           margin: "auto",
           textAlign: "center",
           display: "flex",
@@ -110,10 +99,10 @@ export default class Links extends React.Component {
           >
             {!thing.isPageLink ? (
               <a href={thing.link} target="_blank" style={aStyle}>
-                <div style={nameStyle}>{thing.name}&#8594;</div>
+                <div className="button">{thing.name}&#8594;</div>
               </a>
             ) : (
-              <div style={nameStyle} onClick={thing.handleClick}>
+              <div className="button" onClick={thing.handleClick}>
                 {thing.name}&#8594;
               </div>
             )}

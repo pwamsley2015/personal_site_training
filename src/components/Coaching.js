@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import "../index.css";
 import "./Coaching.css";
 
@@ -12,44 +11,23 @@ const myPhilosophy =
 
 export default class Coaching extends React.Component {
   render() {
-    const pStyle = {
-      backgroundColor: "DarkSlateGray",
-      fontSize: "5vw",
-      lineSpacing: "150%",
-      borderStyle: "solid",
-      borderRadius: "3px",
-      borderColor: "SlateGray",
-    };
     return (
-      <div
-        style={{
-          color: "white",
-          textAlign: "center",
-          width: "70%",
-          margin: "auto",
-          padding: "1vw",
-        }}
-      >
-        <h1 style={{ fontSize: "11vw" }}>Need a coach?</h1>
+      <div>
+        <h1 className="overlay_header">Need a coach?</h1>
         <hr />
-        <p style={pStyle}>{myOffer}</p>
-        <p style={pStyle}>{myProgramming}</p>
-        <p style={pStyle}>{myPhilosophy}</p>
+        <p className="boxed_text">{myOffer}</p>
+        <p className="boxed_text">{myProgramming}</p>
+        <p className="boxed_text">{myPhilosophy}</p>
         <hr />
-        <Button
-          variant="secondary"
-          size="lg"
-          href="https://forms.gle/XjwL4DDavFszQRZW9"
-          target="_blank"
-          style={{
-            fontSize: "9vw",
-            borderRadius: "1vw",
-            borderStyle: "solid",
-            borderColor: "DarkSlateGray",
-          }}
-        >
-          Get in touch &#8594;
-        </Button>
+
+        <a href="https://forms.gle/XjwL4DDavFszQRZW9" target="_blank">
+          <div
+            className="button"
+            style={{ marginLeft: "auto", marginRight: "auto" }}
+          >
+            Get in touch&#8594;
+          </div>
+        </a>
       </div>
     );
   }

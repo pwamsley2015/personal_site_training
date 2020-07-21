@@ -84,24 +84,11 @@ class HomeScreen extends React.Component {
           {/* Content */}
 
           {/* Hi, I'm Patrick */}
-          <Parallax.Layer offset={0.5} speed={5}>
-            <h1
-              style={{
-                fontWeight: "400",
-                textAlign: "center",
-                color: "#FFFFFF",
-                fontSize: "11vw",
-                padding: "5px",
-                margin: "5px",
-                WebkitTextStroke: "2px",
-                WebkitTextStrokeColor: "black",
-              }}
-            >
-              {HELLO}
-            </h1>
+          <Parallax.Layer offset={0.25} speed={0.5}>
+            <h1 className="overlay_header">{HELLO}</h1>
           </Parallax.Layer>
 
-          <Parallax.Layer offset={0.9} speed={5}>
+          <Parallax.Layer offset={0.9} speed={2.5}>
             <Banner />
           </Parallax.Layer>
 

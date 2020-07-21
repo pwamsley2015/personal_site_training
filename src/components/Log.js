@@ -30,18 +30,11 @@ export default class Log extends React.Component {
           padding: "2.5vw",
         }}
       >
-        <h1
-          style={{
-            fontSize: "15vw",
-            padding: "1vh",
-          }}
-        >
-          Training Log
-        </h1>
-        <p style={{ fontSize: "8vw" }}>
+        <h1 className="header">Training Log</h1>
+        <p className="header_smaller">
           This page is currently under development.
         </p>
-        <p style={{ fontSize: "4vw" }}>...but I do have some pictures</p>
+        <p className="header_smaller">...here's some pictures instead.</p>
         <hr />
         <Carousel>
           <Carousel.Item>
