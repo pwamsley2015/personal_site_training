@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Image, Jumbotron } from "react-bootstrap";
+import { Carousel, Image } from "react-bootstrap";
 import IMG_2 from "../images/logB.png";
 import IMG_3 from "../images/logD.png";
 import IMG_1 from "../images/logS.png";
@@ -27,29 +27,21 @@ export default class Log extends React.Component {
           margin: "auto",
           width: "100%",
           height: "80vw",
-          backgroundColor: "SlateGray",
           padding: "2.5vw",
         }}
       >
-        <Jumbotron
+        <h1
           style={{
-            // backgroundImage: "url(" + BG_IMG + ")",
-            backgroundColor: "DarkSlateGray",
-            width: "80vw",
-            height: "auto",
-            margin: "auto",
-            color: "white",
-            padding: "10px",
-            // backgroundRepeat: "no-repeat",
-            // backgroundSize: "cover",
+            fontSize: "15vw",
+            padding: "1vh",
           }}
         >
-          <h1 style={{ fontSize: "15vw" }}>Training Log</h1>
-          <p style={{ fontSize: "8vw" }}>
-            This page is currently under development.
-          </p>
-          <p style={{ fontSize: "4vw" }}>...but I do have some pictures</p>
-        </Jumbotron>
+          Training Log
+        </h1>
+        <p style={{ fontSize: "8vw" }}>
+          This page is currently under development.
+        </p>
+        <p style={{ fontSize: "4vw" }}>...but I do have some pictures</p>
         <hr />
         <Carousel>
           <Carousel.Item>

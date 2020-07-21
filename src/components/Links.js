@@ -5,13 +5,6 @@ const NO_IMAGE = "";
 
 const LINKS = [
   {
-    name: "Coaching",
-    isPageLink: true,
-    link: "#coaching",
-    tooltip: COACHING_TOOLTIP_F,
-    handleClick: COACHING_CLICKED,
-  },
-  {
     name: "Training Log",
     isPageLink: true,
     link: "#log",
@@ -50,11 +43,6 @@ function POSTS_TOOLTIP_F(props) {
 function LOG_TOOLTIP_F(props) {
   return <Tooltip {...props}>Check out my training log.</Tooltip>;
 }
-function COACHING_TOOLTIP_F(props) {
-  return (
-    <Tooltip {...props}>Need help reaching your goals? Get some help.</Tooltip>
-  );
-}
 
 function OPENPOWER_TOOLTIP_F(props) {
   return <Tooltip {...props}>My OpenPowerlifting Listing</Tooltip>;
@@ -77,10 +65,6 @@ function handleClick(link) {
   // section.scrollTop -= 100;
 }
 
-function COACHING_CLICKED() {
-  handleClick("#coaching");
-}
-
 function POSTS_CLICKED() {
   handleClick("#posts");
 }
@@ -96,7 +80,7 @@ export default class Links extends React.Component {
       textDecoration: "inherit",
     };
     const nameStyle = {
-      fontSize: "2vw",
+      fontSize: "3vw",
       fontWeight: "400",
       color: "white",
       backgroundColor: "SlateGray",

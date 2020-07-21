@@ -20,6 +20,12 @@ const POSTS = [
 
 export default class Posts extends React.Component {
   render() {
+    const textStyle = {
+      fontSize: "15vw",
+      fontWeight: "400",
+      padding: "1vw",
+      margin: "1vw",
+    };
     return (
       <div
         style={{
@@ -27,33 +33,17 @@ export default class Posts extends React.Component {
           display: "flex",
           textAlign: "center",
           alignItems: "center",
-          width: "fit-content",
-          color: "white",
           flexDirection: "column",
         }}
       >
-        <Jumbotron
-          style={{
-            // backgroundImage: "url(" + BG_IMG + ")",
-            backgroundColor: "DarkSlateGray",
-            width: "80vw",
-            height: "auto",
-            margin: "auto",
-            color: "white",
-            padding: "10px",
-            // backgroundRepeat: "no-repeat",
-            // backgroundSize: "cover",
-          }}
-        >
-          <h1 style={{ fontSize: "15vw" }}>Posts</h1>
-        </Jumbotron>
+        <h1 style={textStyle}>Posts</h1>
+
         <hr />
         <Carousel>
           {POSTS.map((post, i) => (
             <Carousel.Item>
               <h1
                 style={{
-                  backgroundColor: "SlateGray",
                   width: "fit-content",
                   margin: "auto",
                   padding: "5px",
@@ -73,13 +63,7 @@ export default class Posts extends React.Component {
                 onAfterRender={() => {}}
                 onFailure={() => {}}
               />
-              <h3
-                style={{
-                  backgroundColor: "DarkSlateGray",
-                  maxWidth: "1000px",
-                  width: "fit-content",
-                }}
-              >
+              <h3 style={{ margin: "auto", width: "40vw", padding: "10px" }}>
                 {post.text}
               </h3>
             </Carousel.Item>
