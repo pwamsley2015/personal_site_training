@@ -18,7 +18,7 @@ code {
   font-weight: 400;
   text-align: center;
   color: white;
-  font-size: 200px;
+  font-size: 120px;
   padding: 5px;
   margin: 5px;
   -webkit-text-stroke: 3px;
@@ -29,7 +29,7 @@ code {
   font-weight: 400;
   text-align: center;
   color: white;
-  font-size: 100px;
+  font-size: 70px;
   padding: 3px;
   margin: auto;
   -webkit-text-stroke: 2px;
@@ -40,12 +40,12 @@ code {
   font-weight: 500;
   text-align: center;
   color: white;
-  font-size: 55px;
+  font-size: 24px;
   padding: 3px;
   margin: auto;
   width: 80%;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: black;
+  /* -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: black; */
   background-color: slategray;
 }
 
@@ -62,7 +62,7 @@ code {
   font-weight: 400;
   text-align: center;
   color: black;
-  font-size: 80px;
+  font-size: 40px;
   padding: 5px;
   margin: 5px;
 }
@@ -70,28 +70,28 @@ code {
 .boxed_text {
   color: white;
   background-color: darkslategrey;
-  font-size: 48px;
-  width: 70%;
+  font-size: 24px;
+  width: 80%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: "3px";
-  margin-bottom: "3px";
+  margin-top: "2px";
+  margin-bottom: "2px";
   text-align: center;
-  padding: 5px;
+  padding: 3px;
   /* -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: black; */
   border-style: solid;
-  border-radius: 3px;
+  border-radius: 5px;
   border-color: slategrey;
 }
 
 .button {
-  font-size: 50px;
+  font-size: 24px;
   font-weight: 400;
   color: white;
   background-color: slategrey;
   padding: 3px;
-  border-radius: 25px;
+  border-radius: 13px;
   border-style: solid;
   border-color: darkslategrey;
   height: fit-content;

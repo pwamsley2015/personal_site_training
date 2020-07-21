@@ -14,12 +14,6 @@ export default class Coaching extends React.Component {
     return (
       <div>
         <h1 className="overlay_header">Need a coach?</h1>
-        <hr />
-        <p className="boxed_text">{myOffer}</p>
-        <p className="boxed_text">{myProgramming}</p>
-        <p className="boxed_text">{myPhilosophy}</p>
-        <hr />
-
         <a href="https://forms.gle/XjwL4DDavFszQRZW9" target="_blank">
           <div
             className="button"
@@ -28,6 +22,10 @@ export default class Coaching extends React.Component {
             Get in touch&#8594;
           </div>
         </a>
+        <hr />
+        <p className="boxed_text">{myOffer}</p>
+        <p className="boxed_text">{myProgramming}</p>
+        <p className="boxed_text">{myPhilosophy}</p>
       </div>
     );
   }

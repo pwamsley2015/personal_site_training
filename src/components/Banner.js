@@ -4,7 +4,7 @@ import "../index.css";
 const BTW = "I'm a nerdy Powerlifter.";
 const ABOUT =
   "This is my training site. Here lives a public log of my training, as well as some training-related rambles. I hope you find something interesting--thanks for stopping by!";
-const PRs = "Current bests: Squat 227.5kg | Bench 130kg | Deadlift 272.5kg";
+const PRs = "Current PRs: 227.5kg Squat | 130kg Bench | 272.5kg Deadlift";
 const btwOverlay =
   "...and a software engineer looking for employment. Checkout my portfolio";
 const port = "pwamsley2015.github.io/portfolio";
@@ -72,8 +72,8 @@ export default class Banner extends React.Component {
             <div className="overlay_text_small">{PRs}</div>
           </OverlayTrigger>
         </div>
-
-        <div className="overlay_text">{ABOUT}</div>
+        <hr />
+        <div className="boxed_text">{ABOUT}</div>
       </div>
     );
   }
