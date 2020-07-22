@@ -63,7 +63,7 @@ class HomeScreen extends React.Component {
             </div>
           </Parallax.Layer>
 
-          <Parallax.Layer offset={3} speed={0}>
+          <Parallax.Layer offset={3.2} speed={0}>
             <div id="posts">
               <Posts />
             </div>
@@ -94,15 +94,15 @@ class HomeScreen extends React.Component {
             <h1 className="overlay_header">{HELLO}</h1>
           </Parallax.Layer>
 
-          <Parallax.Layer offset={0.9} speed={2}>
+          <Parallax.Layer offset={0.85} speed={2}>
             <Banner />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.03} speed={-0.5}>
+          <Parallax.Layer offset={1.05} speed={0}>
             <Links style={{ position: "fixed", zIndex: "9999" }} />
           </Parallax.Layer>
 
-          <Parallax.Layer offset={1.1} speed={0.5}>
+          <Parallax.Layer offset={1.15} speed={3}>
             <div id="coaching">
               <Coaching />
             </div>

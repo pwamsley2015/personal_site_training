@@ -18,7 +18,7 @@ code {
   font-weight: 400;
   text-align: center;
   color: white;
-  font-size: 120px;
+  font-size: 100px;
   padding: 5px;
   margin: 5px;
   -webkit-text-stroke: 3px;
@@ -70,7 +70,7 @@ code {
 .boxed_text {
   color: white;
   background-color: darkslategrey;
-  font-size: 24px;
+  font-size: 20px;
   width: 80%;
   margin-right: auto;
   margin-left: auto;
@@ -98,7 +98,7 @@ code {
   width: fit-content;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   .button {
     font-size: 16px;
   }
