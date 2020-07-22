@@ -7,14 +7,9 @@ import "../index.css";
 const POSTS = [
   {
     title: "Hello World",
-    url: "https://www.instagram.com/p/B53qLjjAVDpfYg6K8UWZNIjHe-aA8khceh85fY0/",
-    text:
-      "Ted Talk here. This should be a few sentences, maybe even longer. One could argue this could take up a solid paragraph. It won't be too long though, because I'm too lazy to write that much. Actually, I don't mind writing a lot if it's something I care about... and I care about training... so...?",
-  },
-  {
-    title: "Finishing a cut",
-    url: "https://www.instagram.com/p/B53qLjjAVDpfYg6K8UWZNIjHe-aA8khceh85fY0/",
-    text: "Ted Talk 2.0 here",
+    url:
+      "https://www.instagram.com/p/B53qLjjAVDp/?utm_source=ig_embed&amp;utm_campaign=loading",
+    text: "More posts coming soon!",
   },
 ];
 
@@ -37,18 +32,20 @@ export default class Posts extends React.Component {
               <h1 className="header_smaller">{post.title}</h1>
               <InstagramEmbed
                 url={post.url}
-                maxWidth={600}
+                maxWidth={800}
                 containerTagName="div"
                 injectScript
                 protocol=""
-                hideCaption={true}
+                hideCaption={false}
                 onLoading={() => {}}
                 onSuccess={() => {}}
                 onAfterRender={() => {}}
                 onFailure={() => {}}
               />
-              {/* <hr /> */}
-              <h3 className="boxed_text">{post.text}</h3>
+              <hr />
+              <h3 className="boxed_text" style={{ maxWidth: "60vw" }}>
+                {post.text}
+              </h3>
             </Carousel.Item>
           ))}
         </Carousel>

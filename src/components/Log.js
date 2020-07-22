@@ -15,19 +15,12 @@ export default class Log extends React.Component {
   }
 
   render() {
-    const imgStyle = {
-      objectFit: "contain",
-      maxWidth: "50vw",
-      maxHeight: "50vw",
-    };
     return (
       <div
         style={{
           textAlign: "center",
           margin: "auto",
-          width: "100%",
-          height: "80vw",
-          padding: "2.5vw",
+          padding: "30px",
         }}
       >
         <h1 className="header">Training Log</h1>
@@ -37,14 +30,14 @@ export default class Log extends React.Component {
         <p className="header_smaller">...here's some pictures instead.</p>
         <hr />
         <Carousel>
-          <Carousel.Item>
-            <Image src={IMG_1} style={imgStyle} />
+          <Carousel.Item style={{ maxHeight: "500px" }}>
+            <Image src={IMG_1} fluid />
           </Carousel.Item>
-          <Carousel.Item>
-            <Image src={IMG_2} style={imgStyle} />
+          <Carousel.Item style={{ maxHeight: "500px" }}>
+            <Image src={IMG_2} fluid />
           </Carousel.Item>
-          <Carousel.Item>
-            <Image src={IMG_3} style={imgStyle} />
+          <Carousel.Item style={{ maxHeight: "500px" }}>
+            <Image src={IMG_3} fluid />
           </Carousel.Item>
         </Carousel>
       </div>

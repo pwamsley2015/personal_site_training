@@ -40,9 +40,8 @@ class HomeScreen extends React.Component {
             style={{
               backgroundImage: "url(" + PreBenchImg + ")",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center top",
               backgroundRepeat: "no-repeat",
-              // height: "100%",
             }}
           />
 
@@ -53,14 +52,14 @@ class HomeScreen extends React.Component {
             style={{
               backgroundImage: "url(" + DeadliftFace + ")",
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center top",
               backgroundRepeat: "no-repeat",
             }}
           ></Parallax.Layer>
 
           <Parallax.Layer offset={2} speed={0}>
             <div id="log">
-              <Log />
+              <Log style={{ maxHeight: "100%" }} />
             </div>
           </Parallax.Layer>
 
@@ -88,7 +87,7 @@ class HomeScreen extends React.Component {
             <span className="overlay_text">You hit depth.</span>
           </Parallax.Layer>
 
-          {/* Content */}
+          {/* Overlays */}
 
           {/* Hi, I'm Patrick */}
           <Parallax.Layer offset={0.35} speed={0.3}>
