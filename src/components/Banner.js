@@ -7,7 +7,7 @@ const ABOUT =
 const PRs = "Current PRs: 227.5kg Squat | 130kg Bench | 272.5kg Deadlift";
 const btwOverlay =
   "...and a software engineer looking for employment. Checkout my portfolio";
-const port = "pwamsley2015.github.io/portfolio";
+const port = "https://pwamsley2015.github.io/portfolio";
 
 function btwTooltip(props) {
   return (

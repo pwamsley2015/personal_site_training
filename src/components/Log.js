@@ -4,6 +4,9 @@ import IMG_2 from "../images/logB.png";
 import IMG_3 from "../images/logD.png";
 import IMG_1 from "../images/logS.png";
 import "../index.css";
+
+const db = { weightLog: [180, 181, 182, 181, 180] };
+
 export default class Log extends React.Component {
   constructor() {
     super();
