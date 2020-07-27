@@ -13,8 +13,6 @@ import SquatImg from "./images/Squat.png";
 import "./index.css";
 const HELLO = "Hi, I'm Patrick";
 const BTW = "I'm a nerdy Powerlifter.";
-const ABOUT =
-  "This is my deadlift face. I started training seriously (began my first decent program) early 2018. I've made some progress and learned a few things since then...";
 const PRS = "Current PRs:";
 const SQUAT = "500";
 const BENCH = "286";
