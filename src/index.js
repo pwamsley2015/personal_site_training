@@ -12,20 +12,9 @@ import PreBenchImg from "./images/PreBench.png";
 import SquatImg from "./images/Squat.png";
 import "./index.css";
 const HELLO = "Hi, I'm Patrick";
-const BTW = "I'm a nerdy Powerlifter.";
-const PRS = "Current PRs:";
-const SQUAT = "500";
-const BENCH = "286";
-const DEADLIFT = "600";
-const WHY = "This website exists because...";
 
 class HomeScreen extends React.Component {
   render() {
-    const styles = {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    };
     return (
       <div>
         <Parallax ref="parallax" pages={5}>

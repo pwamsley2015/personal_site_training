@@ -2,6 +2,15 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Chart } from "react-charts";
 import "../index.css";
+import * as firebase from "firebase";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDVxWrRq-2t41ru4L3TmAW-EOYvX-sEOUY",
+  authDomain: "friday-4eeac.firebaseio.com",
+  databaseURL: "https://friday-4eeac.firebaseio.com",
+  storageBucket: "friday-4eeac.firebaseio.com",
+};
+firebase.initializeApp(firebaseConfig);
 const db = {
   bw: [180, 181, 182, 181, 180],
   bwInfo: { today: 180, wra: 181, delta: 0 },
@@ -12,23 +21,33 @@ const db = {
   },
 };
 
-// array of dict {x:<x>, y:<y>}
-function getBWData() {
-  return db.bw.map((bw, i) => ({ x: bw, y: i }));
+function getBWData(log) {
+  const keys = Object.keys(log);
+  const xy = keys.map((date, i) => ({ x: date, y: log[date] }));
+  console.log("xy " + xy);
+  return {
+    label: "Body Weight",
+    data: xy,
+  };
 }
 
-const data = [
-  {
-    label: "Weekly Running Average Body Weight",
-    data: getBWData(),
-  },
-];
 const axes = [
   { type: "linear", position: "bottom" },
   { primary: true, type: "linear", position: "left" },
 ];
 
+function getToday(log) {
+  const dates = Object.keys(log);
+  console.log(dates);
+  return log[dates[dates.length - 1]];
+}
+
 class BodyWeightWidget extends React.Component {
+  //props={doing: <gaining/cutting/maintaining>, log: {date:weight}}
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
@@ -39,7 +58,10 @@ class BodyWeightWidget extends React.Component {
           <Row>
             {/* Text */}
             <Col xs={4}>
-              <p className="widget_boxed_text">Today: {db.bwInfo.today}</p>
+              {/* <p className="widget_boxed_text">Today: {db.bwInfo.today}</p> */}
+              <p className="widget_boxed_text">
+                Today: {getToday(this.props.log)}
+              </p>
               <p className="widget_boxed_text">
                 Weekly Running Average: {db.bwInfo.wra}
               </p>
@@ -47,14 +69,16 @@ class BodyWeightWidget extends React.Component {
                 &Delta;BW&frasl;&Delta;t &#8776; {db.bwInfo.delta}
               </p>
               <hr />
-              <p className="widget_boxed_text">Currently maintaining weight.</p>
+              <p className="widget_boxed_text">
+                Currently {this.props.doing} weight.
+              </p>
             </Col>
             {/* Graph */}
             <Col>
               <div
                 style={{ width: "600px", height: "300px", maxWidth: "70vw" }}
               >
-                <Chart data={data} axes={axes} />
+                <Chart data={getBWData(this.props.log)} axes={axes} />
               </div>
             </Col>
           </Row>
@@ -110,8 +134,8 @@ class TrainingWeekWidget extends React.Component {
           </Row>
           <Row>
             {db.week.days.map((day, i) => (
-              <Col>
-                <span>{day}</span>
+              <Col key={i}>
+                <span key={i + 100}>{day}</span>
               </Col>
             ))}
           </Row>
@@ -124,11 +148,25 @@ class TrainingWeekWidget extends React.Component {
 export default class Log extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      bwLog: 0,
+      bwDoing: "",
+    };
   }
 
   componentDidMount() {
-    this.setState({});
+    const rootRef = firebase.database().ref().child("users");
+    const weightLog = rootRef.child("weight_log");
+    const doing = rootRef.child("bw_doing");
+    doing.on("value", (snap) => {
+      this.setState({ doing: snap.val() });
+    });
+    weightLog.on("value", (snap) => {
+      console.log(snap.val());
+      this.setState({
+        bwLog: snap.val(),
+      });
+    });
   }
 
   render() {
@@ -141,13 +179,10 @@ export default class Log extends React.Component {
         }}
       >
         <h1 className="header">The Dashboard</h1>
-        <p className="header_smaller">
-          This page is currently under development.
-        </p>
 
         <TrainingBlockWidget />
         <TrainingWeekWidget />
-        <BodyWeightWidget />
+        <BodyWeightWidget doing={this.state.doing} log={this.state.bwLog} />
       </div>
     );
   }

@@ -1,7 +1,6 @@
 import React from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
-const NO_IMAGE = "";
 
 const LINKS = [
   {
