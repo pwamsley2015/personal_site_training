@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Chart } from "react-charts";
+import { Line } from "react-chartjs-2";
 import "../index.css";
 import * as firebase from "firebase";
 
@@ -12,8 +12,6 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 const db = {
-  bw: [180, 181, 182, 181, 180],
-  bwInfo: { today: 180, wra: 181, delta: 0 },
   week: {
     days: ["Day 1", "Day 2", "Day 3", "Day 4"],
     stress: "Low",
@@ -21,25 +19,34 @@ const db = {
   },
 };
 
-function getBWData(log) {
-  const keys = Object.keys(log);
-  const xy = keys.map((date, i) => ({ x: date, y: log[date] }));
-  console.log("xy " + xy);
-  return {
-    label: "Body Weight",
-    data: xy,
-  };
-}
-
-const axes = [
-  { type: "linear", position: "bottom" },
-  { primary: true, type: "linear", position: "left" },
-];
+const bwChartOptions = {
+  title: {
+    display: true,
+    text: "Body Weight",
+  },
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          // suggestedMin: 150,
+          // suggestedMax: 300,
+        },
+      },
+    ],
+  },
+};
 
 function getToday(log) {
   const dates = Object.keys(log);
-  console.log(dates);
   return log[dates[dates.length - 1]];
+}
+
+function parseLog(log) {
+  const dates = Object.keys(log);
+  let result = [];
+  dates.forEach((date) => result.push([date, log[date]]));
+
+  return { labels: Object.keys(log), datasets: [{ data: Object.values(log) }] };
 }
 
 class BodyWeightWidget extends React.Component {
@@ -63,10 +70,10 @@ class BodyWeightWidget extends React.Component {
                 Today: {getToday(this.props.log)}
               </p>
               <p className="widget_boxed_text">
-                Weekly Running Average: {db.bwInfo.wra}
+                Weekly Running Average: {this.props.wra}
               </p>
               <p className="widget_boxed_text">
-                &Delta;BW&frasl;&Delta;t &#8776; {db.bwInfo.delta}
+                &Delta;BW&frasl;&Delta;t &#8776; {this.props.dwdt}
               </p>
               <hr />
               <p className="widget_boxed_text">
@@ -75,11 +82,7 @@ class BodyWeightWidget extends React.Component {
             </Col>
             {/* Graph */}
             <Col>
-              <div
-                style={{ width: "600px", height: "300px", maxWidth: "70vw" }}
-              >
-                <Chart data={getBWData(this.props.log)} axes={axes} />
-              </div>
+              <Line data={parseLog(this.props.log)} options={bwChartOptions} />
             </Col>
           </Row>
         </Container>
@@ -151,6 +154,8 @@ export default class Log extends React.Component {
     this.state = {
       bwLog: 0,
       bwDoing: "",
+      bw_wra: 0,
+      bw_dwdt: 0,
     };
   }
 
@@ -158,6 +163,8 @@ export default class Log extends React.Component {
     const rootRef = firebase.database().ref().child("users");
     const weightLog = rootRef.child("weight_log");
     const doing = rootRef.child("bw_doing");
+    const bw_wra = rootRef.child("bw_wra");
+    const bw_dwdt = rootRef.child("bw_dwdt");
     doing.on("value", (snap) => {
       this.setState({ doing: snap.val() });
     });
@@ -165,6 +172,17 @@ export default class Log extends React.Component {
       console.log(snap.val());
       this.setState({
         bwLog: snap.val(),
+      });
+    });
+    bw_wra.on("value", (snap) => {
+      this.setState({
+        bw_wra: snap.val(),
+      });
+    });
+
+    bw_dwdt.on("value", (snap) => {
+      this.setState({
+        bw_dwdt: snap.val(),
       });
     });
   }
@@ -182,7 +200,12 @@ export default class Log extends React.Component {
 
         <TrainingBlockWidget />
         <TrainingWeekWidget />
-        <BodyWeightWidget doing={this.state.doing} log={this.state.bwLog} />
+        <BodyWeightWidget
+          doing={this.state.doing}
+          log={this.state.bwLog}
+          wra={this.state.bw_wra}
+          dwdt={this.state.bw_dwdt}
+        />
       </div>
     );
   }
