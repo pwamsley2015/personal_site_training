@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import InstagramEmbed from "react-instagram-embed";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import "../index.css";
 
 const POSTS = [

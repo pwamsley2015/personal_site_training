@@ -71,17 +71,34 @@ code {
   color: white;
   background-color: darkslategrey;
   font-size: 20px;
-  width: 80%;
+  width: fit-content;
+  max-width: 80%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 15px;
+  margin-bottom: 25px;
   text-align: center;
-  padding: 3px;
+  padding: 6px;
   /* -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: black; */
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 15px;
+  border-color: slategrey;
+}
+
+.widget_boxed_text {
+  color: white;
+  background-color: darkslategrey;
+  font-size: 16px;
+  width: fit-content;
+  max-width: 80%;
+  margin-top: 10px;
+  text-align: center;
+  padding: 6px;
+  /* -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: black; */
+  border-style: solid;
+  border-radius: 10px;
   border-color: slategrey;
 }
 
@@ -96,6 +113,28 @@ code {
   border-color: darkslategrey;
   height: fit-content;
   width: fit-content;
+}
+
+.widget {
+  background-color: slategray;
+  color: white;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: darkslategray;
+  min-width: fit-content;
+  width: 80vw;
+  height: auto;
+}
+
+.chart {
+  background-color: white;
+  border: darkslategrey;
+  border-style: solid;
+  border-width: 5px;
+  padding: 5px;
 }
 
 @media only screen and (max-width: 800px) {

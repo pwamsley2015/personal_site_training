@@ -1,11 +1,10 @@
 import React from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "../index.css";
-const NO_IMAGE = "";
 
 const LINKS = [
   {
-    name: "Training Log",
+    name: "Dashboard",
     isPageLink: true,
     link: "#log",
     tooltip: LOG_TOOLTIP_F,
