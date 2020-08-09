@@ -21,15 +21,15 @@ const db = {
 
 const bwChartOptions = {
   title: {
-    display: true,
+    display: false,
     text: "Body Weight",
   },
   scales: {
     yAxes: [
       {
         ticks: {
-          // suggestedMin: 150,
-          // suggestedMax: 300,
+          // suggestedMin: 170,
+          // suggestedMax: 200,
         },
       },
     ],
@@ -46,7 +46,22 @@ function parseLog(log) {
   let result = [];
   dates.forEach((date) => result.push([date, log[date]]));
 
-  return { labels: Object.keys(log), datasets: [{ data: Object.values(log) }] };
+  return {
+    labels: Object.keys(log),
+    datasets: [
+      {
+        label: "Raw Body Weight, #",
+        data: Object.values(log),
+        fill: false,
+        backgroundColor: "darkslategray",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBorderWidth: 2,
+        pointRadius: 2,
+        pointHitRadius: 10,
+      },
+    ],
+  };
 }
 
 class BodyWeightWidget extends React.Component {
@@ -60,30 +75,45 @@ class BodyWeightWidget extends React.Component {
       <div>
         <Container className="widget">
           <Row>
-            <h3 className="overlay_text_small">Body Weight</h3>
+            <Col>
+              <h3 className="overlay_text_small">Body Weight</h3>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <p className="widget_boxed_text">
+              Today: {getToday(this.props.log)} #
+            </p>
+            <p className="widget_boxed_text">{this.props.doing}</p>
+            <p className="widget_boxed_text">
+              On track?{" "}
+              {this.props.onTrack ? (
+                <span>&#x1f44d;</span>
+              ) : (
+                <span>&#x1f44e;</span>
+              )}
+            </p>
           </Row>
           <Row>
-            {/* Text */}
-            <Col xs={4}>
-              {/* <p className="widget_boxed_text">Today: {db.bwInfo.today}</p> */}
-              <p className="widget_boxed_text">
-                Today: {getToday(this.props.log)}
-              </p>
-              <p className="widget_boxed_text">
-                Weekly Running Average: {this.props.wra}
-              </p>
-              <p className="widget_boxed_text">
-                &Delta;BW&frasl;&Delta;t &#8776; {this.props.dwdt}
-              </p>
-              <hr />
-              <p className="widget_boxed_text">
-                Currently {this.props.doing} weight.
-              </p>
-            </Col>
-            {/* Graph */}
             <Col>
-              <Line data={parseLog(this.props.log)} options={bwChartOptions} />
+              {/* Graph */}
+              <div className="chart">
+                <Line
+                  style={{ padding: "10px" }}
+                  className="chart"
+                  data={parseLog(this.props.log)}
+                  options={bwChartOptions}
+                />
+              </div>
             </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <p className="widget_boxed_text">
+              Weekly Running Average: {this.props.wra} #
+            </p>
+            <p className="widget_boxed_text">
+              &Delta;BW &frasl; &Delta;t &#8776; {this.props.dwdt} # &frasl;
+              week
+            </p>
           </Row>
         </Container>
       </div>
@@ -160,11 +190,14 @@ export default class Log extends React.Component {
   }
 
   componentDidMount() {
-    const rootRef = firebase.database().ref().child("users");
-    const weightLog = rootRef.child("weight_log");
-    const doing = rootRef.child("bw_doing");
-    const bw_wra = rootRef.child("bw_wra");
-    const bw_dwdt = rootRef.child("bw_dwdt");
+    const rootRef = firebase.database().ref().child("users").child("primary");
+    const bw = rootRef.child("bw");
+    const weightLog = bw.child("log");
+    const bwMeta = bw.child("meta");
+    const doing = bwMeta.child("doing");
+    const bw_wra = bwMeta.child("wra");
+    const bw_dwdt = bwMeta.child("dwdt");
+    const bw_track = bwMeta.child("onTrack");
     doing.on("value", (snap) => {
       this.setState({ doing: snap.val() });
     });
@@ -183,6 +216,12 @@ export default class Log extends React.Component {
     bw_dwdt.on("value", (snap) => {
       this.setState({
         bw_dwdt: snap.val(),
+      });
+    });
+
+    bw_track.on("value", (snap) => {
+      this.setState({
+        bw_onTrack: snap.val(),
       });
     });
   }
@@ -205,6 +244,7 @@ export default class Log extends React.Component {
           log={this.state.bwLog}
           wra={this.state.bw_wra}
           dwdt={this.state.bw_dwdt}
+          onTrack={this.state.bw_onTrack}
         />
       </div>
     );
