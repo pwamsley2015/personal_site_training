@@ -129,22 +129,23 @@ class TrainingBlockWidget extends React.Component {
           <Row>
             <h3 className="overlay_text_small">Current Training Block</h3>
           </Row>
-          <Row>
-            {/* Deltas */}
+          <Row className="justify-content-md-center">
+            This widget is currently under developement.
+          </Row>
+          {/* <Row>
+            Deltas
             <Col>
               <p className="widget_boxed_text">&Delta;Squat</p>
               <p className="widget_boxed_text">&Delta;Bench</p>
               <p className="widget_boxed_text">&Delta;Deadlift</p>
             </Col>
-            {/* Graphs */}
             <Col>Graphs</Col>
-            {/* Summary */}
             <Col>
               <p className="widget_boxed_text">Type:</p>
               <p className="widget_boxed_text">Week n of m</p>
               <p className="widget_boxed_text">No meet coming up.</p>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </div>
     );
@@ -159,8 +160,10 @@ class TrainingWeekWidget extends React.Component {
           <Row>
             <h3 className="overlay_text_small">Current Training Week</h3>
           </Row>
-          <Row>
-            {/* Summary */}
+          <Row className="justify-content-md-center">
+            This widget is currently under developement.
+          </Row>
+          {/* <Row>
             <Col>
               <p className="widget_boxed_text">Stress: {db.week.stress}</p>
             </Col>
@@ -171,7 +174,7 @@ class TrainingWeekWidget extends React.Component {
                 <span key={i + 100}>{day}</span>
               </Col>
             ))}
-          </Row>
+          </Row> */}
         </Container>
       </div>
     );
@@ -228,13 +231,7 @@ export default class Log extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          textAlign: "center",
-          margin: "auto",
-          padding: "30px",
-        }}
-      >
+      <div className="justify-content-md-center">
         <h1 className="header">The Dashboard</h1>
 
         <TrainingBlockWidget />
