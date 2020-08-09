@@ -181,7 +181,7 @@ class TrainingWeekWidget extends React.Component {
   }
 }
 
-export default class Log extends React.Component {
+export default class Dashboard extends React.Component {
   constructor() {
     super();
     this.state = {

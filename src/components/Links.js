@@ -4,7 +4,7 @@ import "../index.css";
 
 const LINKS = [
   {
-    name: "Training Log",
+    name: "Dashboard",
     isPageLink: true,
     link: "#log",
     tooltip: LOG_TOOLTIP_F,

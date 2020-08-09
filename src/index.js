@@ -5,7 +5,7 @@ import Parallax from "react-springy-parallax";
 import Banner from "./components/Banner";
 import Coaching from "./components/Coaching";
 import Links from "./components/Links";
-import Log from "./components/Log";
+import Log from "./components/Dashboard";
 import Posts from "./components/Posts";
 import DeadliftFace from "./images/DeadliftFace.jpg";
 import PreBenchImg from "./images/PreBench.png";
