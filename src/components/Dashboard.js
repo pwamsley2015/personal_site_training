@@ -25,6 +25,14 @@ const bwChartOptions = {
     text: "Body Weight",
   },
   scales: {
+    xAxes: [
+      {
+        // type: "time",
+        // time: {
+        //   unit: "day",
+        // },
+      },
+    ],
     yAxes: [
       {
         ticks: {
@@ -47,7 +55,7 @@ function parseLog(log) {
   dates.forEach((date) => result.push([date, log[date]]));
 
   return {
-    labels: Object.keys(log),
+    labels: Object.keys(log).map((day) => "Day " + day),
     datasets: [
       {
         label: "Raw Body Weight, #",

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/training/static/css/main.d3dc07cc.chunk.css",
+    "main.js": "/training/static/js/main.d3316aa1.chunk.js",
+    "main.js.map": "/training/static/js/main.d3316aa1.chunk.js.map",
+    "runtime-main.js": "/training/static/js/runtime-main.fe0571fe.js",
+    "runtime-main.js.map": "/training/static/js/runtime-main.fe0571fe.js.map",
+    "static/css/2.53823a3d.chunk.css": "/training/static/css/2.53823a3d.chunk.css",
+    "static/js/2.e61c559b.chunk.js": "/training/static/js/2.e61c559b.chunk.js",
+    "static/js/2.e61c559b.chunk.js.map": "/training/static/js/2.e61c559b.chunk.js.map",
+    "index.html": "/training/index.html",
+    "precache-manifest.babb8b9dab57f511c3f6bb736f7fdad1.js": "/training/precache-manifest.babb8b9dab57f511c3f6bb736f7fdad1.js",
+    "service-worker.js": "/training/service-worker.js",
+    "static/css/2.53823a3d.chunk.css.map": "/training/static/css/2.53823a3d.chunk.css.map",
+    "static/css/main.d3dc07cc.chunk.css.map": "/training/static/css/main.d3dc07cc.chunk.css.map",
+    "static/js/2.e61c559b.chunk.js.LICENSE.txt": "/training/static/js/2.e61c559b.chunk.js.LICENSE.txt",
+    "static/media/DeadliftFace.jpg": "/training/static/media/DeadliftFace.5d5a5136.jpg",
+    "static/media/PreBench.png": "/training/static/media/PreBench.ff30903f.png",
+    "static/media/Squat.png": "/training/static/media/Squat.2285d350.png",
+    "static/media/logB.png": "/training/static/media/logB.9bc9d0ab.png",
+    "static/media/logD.png": "/training/static/media/logD.2444756b.png",
+    "static/media/logS.png": "/training/static/media/logS.cf982dcc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fe0571fe.js",
+    "static/css/2.53823a3d.chunk.css",
+    "static/js/2.e61c559b.chunk.js",
+    "static/css/main.d3dc07cc.chunk.css",
+    "static/js/main.d3316aa1.chunk.js"
+  ]
+}

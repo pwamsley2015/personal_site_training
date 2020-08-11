@@ -1,31 +1,28 @@
 {
   "files": {
-    "main.css": "/training/static/css/main.9f791b30.chunk.css",
-    "main.js": "/training/static/js/main.fc859e59.chunk.js",
-    "main.js.map": "/training/static/js/main.fc859e59.chunk.js.map",
+    "main.css": "/training/static/css/main.87a48335.chunk.css",
+    "main.js": "/training/static/js/main.32e98a5f.chunk.js",
+    "main.js.map": "/training/static/js/main.32e98a5f.chunk.js.map",
     "runtime-main.js": "/training/static/js/runtime-main.fe0571fe.js",
     "runtime-main.js.map": "/training/static/js/runtime-main.fe0571fe.js.map",
     "static/css/2.53823a3d.chunk.css": "/training/static/css/2.53823a3d.chunk.css",
-    "static/js/2.e61c559b.chunk.js": "/training/static/js/2.e61c559b.chunk.js",
-    "static/js/2.e61c559b.chunk.js.map": "/training/static/js/2.e61c559b.chunk.js.map",
+    "static/js/2.368570da.chunk.js": "/training/static/js/2.368570da.chunk.js",
+    "static/js/2.368570da.chunk.js.map": "/training/static/js/2.368570da.chunk.js.map",
     "index.html": "/training/index.html",
-    "precache-manifest.a4d5b7a7c82dec76d695880a2711a6a3.js": "/training/precache-manifest.a4d5b7a7c82dec76d695880a2711a6a3.js",
+    "precache-manifest.0284bd0669e319ddeb0a8ecf85800568.js": "/training/precache-manifest.0284bd0669e319ddeb0a8ecf85800568.js",
     "service-worker.js": "/training/service-worker.js",
     "static/css/2.53823a3d.chunk.css.map": "/training/static/css/2.53823a3d.chunk.css.map",
-    "static/css/main.9f791b30.chunk.css.map": "/training/static/css/main.9f791b30.chunk.css.map",
-    "static/js/2.e61c559b.chunk.js.LICENSE.txt": "/training/static/js/2.e61c559b.chunk.js.LICENSE.txt",
+    "static/css/main.87a48335.chunk.css.map": "/training/static/css/main.87a48335.chunk.css.map",
+    "static/js/2.368570da.chunk.js.LICENSE.txt": "/training/static/js/2.368570da.chunk.js.LICENSE.txt",
     "static/media/DeadliftFace.jpg": "/training/static/media/DeadliftFace.5d5a5136.jpg",
     "static/media/PreBench.png": "/training/static/media/PreBench.ff30903f.png",
-    "static/media/Squat.png": "/training/static/media/Squat.2285d350.png",
-    "static/media/logB.png": "/training/static/media/logB.9bc9d0ab.png",
-    "static/media/logD.png": "/training/static/media/logD.2444756b.png",
-    "static/media/logS.png": "/training/static/media/logS.cf982dcc.png"
+    "static/media/Squat.png": "/training/static/media/Squat.2285d350.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fe0571fe.js",
     "static/css/2.53823a3d.chunk.css",
-    "static/js/2.e61c559b.chunk.js",
-    "static/css/main.9f791b30.chunk.css",
-    "static/js/main.fc859e59.chunk.js"
+    "static/js/2.368570da.chunk.js",
+    "static/css/main.87a48335.chunk.css",
+    "static/js/main.32e98a5f.chunk.js"
   ]
 }
